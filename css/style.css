@@ -1,0 +1,240 @@
+:root{
+  --bg:#07142a;
+  --deep:#02121a;
+  --gold:#d6b46a;
+  --gold-2:#b88938;
+  --muted:#cfc9c2;
+}
+
+html,body{
+  html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: "Montserrat", sans-serif;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(0,0,0,0.25), transparent),
+              linear-gradient(180deg, rgba(2,6,23,0.6), rgba(0,0,0,0.9)),
+              var(--bg);
+  color: var(--muted);
+  overflow-x: hidden;
+}
+}
+
+/* Tarjeta */
+.card{
+  width:100%;
+  max-width:900px;
+  background: rgba(255,255,255,0.03);
+  border-radius:18px;
+  padding:36px 48px;
+  position:relative;
+  box-shadow:0 20px 50px rgba(3,6,10,0.7);
+  margin: 40px auto;   /* centra horizontalmente */
+}
+
+/* Logo */
+.logo{
+  position:absolute;
+  left:6px;
+  top:26px;
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.logo img{
+  width:210px;
+  height:210px;
+  object-fit:contain;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.6));
+}
+.logo .org{
+  font-family: "Playfair Display", serif;
+  color:var(--gold);
+  font-size:14px;
+}
+
+/* Botones */
+.controls{
+  position:absolute;
+  right:26px;
+  top:26px;
+  display:flex;
+  gap:10px;
+}
+.btn{
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.06);
+  color:var(--muted);
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+}
+.btn:hover{
+  transform: translateY(-2px);
+}
+
+/* Contenido */
+.content{
+  text-align:center;
+  margin-top:60px;
+  padding:48px 28px;
+}
+
+.subtitle{
+  font-size:20px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+h1{
+  font-family: "Playfair Display", serif;
+  color:var(--gold);
+  font-size:54px;
+}
+
+.main-word{
+  font-family:"Playfair Display", serif;
+  color:var(--gold);
+  font-size:60px;
+  font-weight:900;
+  font-style:italic;
+}
+
+.lead{
+  font-family:"Playfair Display", serif;
+  color:#efe9dc;
+  font-size:20px;
+  max-width:760px;
+  margin:auto;
+}
+
+/* Información */
+.info{
+  display:flex;
+  justify-content:center;
+  gap:36px;
+  flex-wrap:wrap;
+  margin-top:24px;
+}
+
+.info .block{
+  min-width:220px;
+}
+
+.label{
+  color:var(--gold-2);
+  font-size:12px;
+  text-transform:uppercase;
+}
+
+.value{
+  color:#efe9dc;
+  font-size:15px;
+}
+
+/* Ornamentos */
+.ornament{
+  position:absolute;
+  width:240px;
+  height:240px;
+  opacity:0.85;
+  z-index:1;
+}
+
+.ornament.top-right{
+  right:-40px;
+  top:-30px;
+}
+
+.ornament.bottom-left{
+  left:-60px;
+  bottom:-40px;
+}
+
+.vignette{
+  position:absolute;
+  inset:0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+  border-radius:18px;
+  pointer-events:none;
+}
+
+.divider{
+  width:220px;
+  height:2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin:18px auto 0;
+}
+
+.footer{
+  margin-top:30px;
+  font-size:12px;
+  color:rgba(255,255,255,0.55);
+}
+
+/* Animación */
+.card:hover .ornament{
+  transform: translateY(-6px) scale(1.02);
+  transition: .8s;
+}
+
+/* aviso cuando el móvil está en vertical */
+#rotate-warning {
+  position: fixed;
+  inset: 0;
+  background: #07142a;
+  color: white;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  z-index: 9999;
+}
+
+#rotate-warning .rotate-box {
+  border: 2px solid #d6b46a;
+  padding: 30px;
+  border-radius: 14px;
+  font-size: 20px;
+  font-family: "Playfair Display", serif;
+  line-height: 1.4;
+}
+
+/* fuerza a que EL CONTENIDO NO SE VEA cuando esté en portrait */
+@media screen and (orientation: portrait) {
+  body *:not(#rotate-warning) {
+    display: none !important;
+  }
+  #rotate-warning {
+    display: flex !important;
+  }
+}
+
+
+.maps-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 18px;
+  background: linear-gradient(90deg, #d6b46a, #b88938);
+  color: #07142a;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 15px;
+  transition: 0.3s;
+  box-shadow: 0 4px 12px rgba(214,180,106,0.4);
+}
+
+.maps-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(214,180,106,0.6);
+}
+
+
+/* Responsive */
+@media (max-width:720px){
+  h1{ font-size:44px; }
+  .main-word{ font-size:56px; }
+  .ornament{ display:none; }
+}
