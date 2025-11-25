@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const card = document.getElementById('poster');
   card.style.opacity = 0;
   card.style.transform = 'translateY(8px)';
+
   setTimeout(() => {
     card.style.transition = 'opacity .9s ease, transform .9s';
     card.style.opacity = 1;
@@ -10,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 80);
 });
 
+// Activar audio al hacer click
 document.addEventListener("click", () => {
   const music = document.getElementById("bg-music");
   if (music.muted) {
@@ -17,7 +19,6 @@ document.addEventListener("click", () => {
     music.play();
   }
 });
-
 
 // Parallax suave
 (function(){
@@ -33,6 +34,7 @@ document.addEventListener("click", () => {
   });
 })();
 
+// Aviso de orientación
 function checkOrientation() {
   const warning = document.getElementById('rotate-warning');
   
