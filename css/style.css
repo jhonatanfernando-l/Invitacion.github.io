@@ -15,7 +15,7 @@ html, body {
   background: transparent !important; 
   color: var(--muted);
   /*boquear scroll*/
-  overflow-x: hidden;
+
 }
 
 /* VIDEO DE FONDO */
