@@ -30,13 +30,14 @@ html, body {
 
   /* Sombra original + dorada */
   box-shadow:
-    0 20px 50px rgba(3,6,10,0.7),           /* sombra oscura profunda */
-    0 0 40px 5px rgba(214,180,106,0.35);     /* halo dorado suave */
+    0 20px 50px rgba(3,6,10,0.7),
+    0 0 40px 5px rgba(214,180,106,0.35);
 
   margin: 40px auto;
   transition: transform 0.8s, box-shadow 0.8s;
 }
 
+/* Botón para forzar horizontal */
 #force-horizontal {
   position: fixed;
   bottom: 40px;
@@ -57,11 +58,21 @@ html, body {
   box-shadow: 0 4px 12px rgba(214,180,106,0.4);
 }
 
-/* Opcional: animación suave */
+/* Mostrar tarjeta forzada y ocultar aviso */
+body.force-horizontal #poster {
+  display: block !important;
+  transform: rotate(-90deg) scale(0.8);
+  transform-origin: center center;
+}
+
+body.force-horizontal #rotate-warning {
+  display: none !important;
+}
+
+/* Animación suave al forzar horizontal */
 .force-horizontal .card {
   transition: transform 0.5s ease;
 }
-
 
 /* Logo */
 .logo {

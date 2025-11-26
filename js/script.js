@@ -49,6 +49,7 @@ function checkOrientation() {
     warning.style.display = "flex";
   } else {
     warning.style.display = "none";
+    document.body.classList.remove("force-horizontal"); // Reset si giran el teléfono
   }
 }
 window.addEventListener("orientationchange", checkOrientation);
@@ -60,29 +61,20 @@ checkOrientation();
 // ----------------------
 const forceBtn = document.getElementById("force-horizontal");
 const body = document.body;
-const card = document.querySelector(".card");
 
-// Mostrar botón solo en portrait
+forceBtn.addEventListener("click", () => {
+  body.classList.toggle("force-horizontal");
+});
+
+// Mostrar el botón solo en portrait
 function updateForceButton() {
   if (window.matchMedia("(orientation: portrait)").matches) {
     forceBtn.style.display = "block";
   } else {
     forceBtn.style.display = "none";
-    card.style.transform = ""; // resetear rotación
-    body.classList.remove("force-horizontal");
+    body.classList.remove("force-horizontal"); // reset si cambia la orientación
   }
 }
-
-// Girar el contenido al hacer clic
-forceBtn.addEventListener("click", () => {
-  body.classList.toggle("force-horizontal");
-  if (body.classList.contains("force-horizontal")) {
-    card.style.transform = "rotate(-90deg) scale(0.8)";
-  } else {
-    card.style.transform = "none";
-  }
-});
-
 window.addEventListener("resize", updateForceButton);
 window.addEventListener("orientationchange", updateForceButton);
 updateForceButton();
