@@ -37,6 +37,32 @@ html, body {
   transition: transform 0.8s, box-shadow 0.8s;
 }
 
+#force-horizontal {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 20px;
+  background: linear-gradient(90deg, #d6b46a, #b88938);
+  color: #07142a;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 10000;
+  display: none; /* solo se muestra con JS en portrait */
+}
+
+#force-horizontal:hover {
+  box-shadow: 0 4px 12px rgba(214,180,106,0.4);
+}
+
+/* Opcional: animación suave */
+.force-horizontal .card {
+  transition: transform 0.5s ease;
+}
+
+
 /* Logo */
 .logo {
   position: absolute;
