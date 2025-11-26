@@ -12,23 +12,33 @@ html, body {
   padding: 0;
   min-height: 100%;
   font-family: "Montserrat", sans-serif;
-  background: radial-gradient(1200px 600px at 10% 10%, rgba(0,0,0,0.25), transparent),
-              linear-gradient(180deg, rgba(2,6,23,0.6), rgba(0,0,0,0.9)),
-              var(--bg);
+  background: transparent !important; 
   color: var(--muted);
+  /*boquear scroll*/
   overflow-x: hidden;
+}
+
+/* VIDEO DE FONDO */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+  pointer-events: none;
 }
 
 /* Tarjeta */
 .card {
   width: 100%;
   max-width: 900px;
-  background: rgba(255,255,255,0.03);
+  background: rgba(13, 1, 66, 0.03);
   border-radius: 18px;
   padding: 36px 48px;
   position: relative;
 
-  /* Sombra original + dorada */
   box-shadow:
     0 20px 50px rgba(3,6,10,0.7),
     0 0 40px 5px rgba(214,180,106,0.35);
@@ -51,7 +61,7 @@ html, body {
   border-radius: 10px;
   cursor: pointer;
   z-index: 10000;
-  display: none; /* solo se muestra con JS en portrait */
+  display: none;
 }
 
 #force-horizontal:hover {
@@ -69,11 +79,6 @@ body.force-horizontal #rotate-warning {
   display: none !important;
 }
 
-/* Animación suave al forzar horizontal */
-.force-horizontal .card {
-  transition: transform 0.5s ease;
-}
-
 /* Logo */
 .logo {
   position: absolute;
@@ -84,7 +89,7 @@ body.force-horizontal #rotate-warning {
   align-items: center;
 }
 .logo img {
-  width: 190px;
+  width: 250px;
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 6px 10px rgba(0,0,0,0.6));
@@ -154,7 +159,7 @@ h1 {
   font-size: 15px;
 }
 
-/* Botón de Google Maps */
+/* Botón maps */
 .maps-btn {
   display: inline-block;
   margin-top: 8px;
@@ -214,17 +219,11 @@ h1 {
   color: rgba(255,255,255,0.55);
 }
 
-/* Animación al pasar el mouse */
-.card:hover .ornament {
-  transform: translateY(-6px) scale(1.02);
-  transition: 0.8s;
-}
-
-/* Aviso para girar pantalla */
+/* Aviso rotate */
 #rotate-warning {
   position: fixed;
   inset: 0;
-  background: #07142a;
+  background: rgba(7,20,42,0.7); /* TRANSPARENTE PARA VER EL VIDEO DETRÁS */
   color: white;
   display: none;
   justify-content: center;
@@ -243,49 +242,30 @@ h1 {
   line-height: 1.4;
 }
 
-/* Media query para portrait */
+/* Portrait */
 @media screen and (orientation: portrait) {
   .card {
-    display: none !important; /* Oculta la tarjeta en vertical */
+    display: none !important;
   }
 
   #rotate-warning {
     display: flex !important;
   }
 
+  /* Fondo oscuro PERO transparente para permitir ver el video */
   body {
-    background: radial-gradient(1200px 600px at 10% 10%, rgba(0,0,0,0.25), transparent),
-                linear-gradient(180deg, rgba(2,6,23,0.6), rgba(0,0,0,0.9)),
-                #07142a !important;
+    background: rgba(0,0,0,0.6) !important;
   }
 }
 
-/* Media query para móviles pequeños (<480px) */
+/* Móviles muy pequeños */
 @media screen and (max-width: 480px) {
-  h1 {
-    font-size: 36px;
-  }
-
-  .main-word {
-    font-size: 42px;
-  }
-
-  .lead {
-    font-size: 16px;
-  }
-
-  .subtitle {
-    font-size: 16px;
-  }
-
-  .content {
-    padding: 24px 16px;
-  }
-
-  .info .block {
-    min-width: 160px;
-  }
-
+  h1 { font-size: 36px; }
+  .main-word { font-size: 42px; }
+  .lead { font-size: 16px; }
+  .subtitle { font-size: 16px; }
+  .content { padding: 24px 16px; }
+  .info .block { min-width: 160px; }
   .ornament {
     width: 160px;
     height: 160px;

@@ -4,22 +4,25 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Festejo - Enfermería</title>
-
-  <!-- Tipografías -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <!-- CSS externo -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <!-- Aviso para girar pantalla -->
+
+
+
+  <!-- girar pantalla -->
   <div id="rotate-warning">
   <div class="rotate-box">
-    <p>Por favor gira tu dispositivo<br><strong>a orientación horizontal</strong></p>
-    <button id="force-horizontal">Ver en horizontal</button>
+    <p>Para una mejor vizualizacion se recomienda rotar el dispositivo<br><strong>a horizontal</strong></p>
+    <button id="force-horizontal">Ignorar</button>
   </div>
 </div>
+
+<video id="bg-video" autoplay muted loop playsinline>
+  <source src="video/5192-183786490_medium.mp4" type="video/mp4">
+</video>
 
   <!-- Tarjeta principal -->
   <div class="card" id="poster">
@@ -65,17 +68,18 @@
 
     <!-- Contenido de la invitación -->
     <div class="content">
+      <H1>¡HOLA!</H1>
       <h1>Estas invitado a mi fiesta de graduación</h1>
       <span class="main-word">Técnico Medio en Enfermería</span>
 
       <div class="divider"></div>
 
       <p class="lead">
-        Después de tanto tiempo, llegó el día que terminé mi Técnico Medio en Enfermería
+        Después de tanto tiempo, llegó el día que terminé mis estudios en Técnico Medio en Enfermería
         y por eso, yo <b>Sarai Ruth Cuevas vallejos</b> quiero invitarte a celebrar este momento tan especial en mi vida
       </p>
-
-      <div class="subtitle">¡OJALÁ PUEDAS ACOMPAÑARME!</div>
+<br>
+      <div class="subtitle">¡ESPERAMOS CONTAR CON TU PARTICIPACIÓN!</div>
 
       <div class="info">
         <div class="block">
@@ -106,10 +110,8 @@
     </div>
   </div>
 
-  <!-- JS externo -->
-  <script src="js/script.js"></script>
 
-  <!-- Audio -->
+  <script src="js/script.js"></script>
   <audio id="bg-music" src="audio/Kate Bush - Running Up That Hill - Official Music Video [wp43OdtAAkM].mp3" autoplay loop muted></audio>
 </body>
 </html>
